@@ -2,7 +2,7 @@ import React from "react";
 import style from "./recipe.module.css";
 
 const Recipe = ({ title, calories, image, ingredients }) => {
-  return (
+  return title.length > 0 ? (
     <div className={style.recipe}>
       <h1>{title}</h1>
       <img className={style.image} src={image} alt="" />
@@ -16,6 +16,8 @@ const Recipe = ({ title, calories, image, ingredients }) => {
         {calories}
       </p>
     </div>
+  ) : (
+    <h1>Data Pending....</h1>
   );
 };
 

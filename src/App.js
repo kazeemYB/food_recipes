@@ -19,10 +19,10 @@ function App() {
   }, [query]);
 
   const getRecipes = async () => {
-    const response = await fetch(Req);
+    const response = await fetch(Req).catch((error) => console.log(error));
     const data = await response.json();
     setRecipes(data.hits);
-    console.log(data.hits);
+    console.log(`User searched for '${search}' --> ${data.hits}`);
   };
 
   const updateSearch = (e) => {
